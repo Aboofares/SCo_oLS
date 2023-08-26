@@ -11,31 +11,32 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |--------------------------------------------------------------------------
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 
 Auth::routes();
-//
-//Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('home');
-//
-//
-//
-//
-//Route::group(
-//    [
-//        'prefix' => LaravelLocalization::setLocale(),
-//        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-//    ], function(){
-//
-////inside language
-//
-////Dashboard
-//    Route::get('/Admins', function () {
-//        return view('Admins.dashboard');
-//    });
-//
-//});
+
+
+
+
+
+
+
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','auth:web']
+    ], function(){
+
+
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+});
+
+
+
+
+
+
 
 
 ////////////////////
@@ -45,12 +46,13 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function(){
 
+    Route::get('/a', function () {
+        return view('WebSite.Hwebsite');
+    });
 
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('selection');
-    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('selection');
 
     Route::controller(LoginController::class)->group(function () {
-
         Route::get('/login/{type}', 'loginForm')->middleware('guest')->name('login.show');
         Route::post('/login', 'login')->name('login');
         Route::get('/logout/{type}', 'logout')->name('logout');

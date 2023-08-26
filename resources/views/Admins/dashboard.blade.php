@@ -3,28 +3,45 @@
 @extends('Theme.layouts.master')
 
 @section('page_header')
-    page_header
+{{trans('mainTransCustom.Dashboard')}}
 @stop
 @section('CustomHead')
 
 @endsection
 @section('page_title')
-    admins
+
 
 
 @stop
 @section('breadcrumb')
     <div class="breadcrumbs-top d-inline-block">
         <div class="breadcrumb-wrapper mr-1">
-            <ol class="breadcrumb">
-                @for($i = 2; $i <= count(Request::segments()); $i++)
-                    <li class="breadcrumb-item">
-                        <a href="{{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}">
+{{--            <ol class="breadcrumb">--}}
+{{--                @for($i = 2; $i <= count(Request::segments()); $i++)--}}
+{{--                    <li class="breadcrumb-item">--}}
+{{--                        <a href="{{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}">--}}
+{{--                            {{strtoupper(Request::segment($i))}}--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                @endfor--}}
+{{--            </ol>--}}
+
+                    <ol class="breadcrumb">
+{{--                        <li class="breadcrumb-item"><a href="#">dash</a>--}}
+{{--                        </li>--}}
+
+
+                @for($i = 3; $i <= count(Request::segments()); $i++)
+                    <li class="breadcrumb-item active">
+                        <a href="">
                             {{strtoupper(Request::segment($i))}}
+{{--                            {{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}--}}
                         </a>
                     </li>
                 @endfor
-            </ol>
+
+                    </ol>
+
         </div>
     </div>
 

@@ -46,26 +46,31 @@
 
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"> <span class="avatar avatar-online"><img src="{{ URL::asset('Theme/rtl/app-assets/images/portrait/small/avatar-s-19.png') }}" alt="avatar"><i></i></span></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="{{ URL::asset('Theme/rtl/app-assets/images/portrait/small/avatar-s-19.png') }}" alt="avatar">
-                                        <span class="user-name text-bold-700 ml-1"> </span></span></a>
+                            <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="{{ URL::asset('Theme/rtl/app-assets/images/portrait/small/avatar-s-19.png') }}" alt="{{ Auth::user()->name }}">
+                                        <span class="user-name text-bold-700 ml-1"> {{ Auth::user()->name }} </span></span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
+                                <a class="dropdown-item" href="#"><i class="ft-user"></i> {{trans('mainTransCustom.Profile')}}</a>
                                 <div class="dropdown-divider"></div>
+                                <div class="dropdown-item">
                                 @if(auth('student')->check())
-                                    <form method="GET" action="{{ route('logout','student') }}">
-                                        @elseif(auth('teacher')->check())
-                                            <form method="GET" action="{{ route('logout','teacher') }}">
-                                                @elseif(auth('family')->check())
-                                                    <form method="GET" action="{{ route('logout','family') }}">
-                                                        @elseif(auth('admin')->check())
-                                                            <form method="GET" action="{{ route('logout','admin') }}">
-                                                                @else
-                                                                    <form method="GET" action="{{ route('logout','web') }}">
-                                                                        @endif
+                                <form method="GET" action="{{ route('logout','student') }}">
+                                @elseif(auth('teacher')->check())
+                                <form method="GET" action="{{ route('logout','teacher') }}">
+                                @elseif(auth('family')->check())
+                                <form method="GET" action="{{ route('logout','family') }}">
+                                @elseif(auth('admin')->check())
+                                <form method="GET" action="{{ route('logout','admin') }}">
+                                @else
+                                <form method="GET" action="{{ route('logout','web') }}">
+                                @endif
 
-                                                                        @csrf
-                                                                        <a class="dropdown-item" href="#" onclick="event.preventDefault();this.closest('form').submit();"><i class="ft-power"></i> Logout</a>
-                                                                    </form>
+                                @csrf
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault();this.closest('form').submit();"><i class="ft-power"></i>
+                                    {{trans('mainTransCustom.Logout')}}
+                                </a>
+                                </form>
+                                </div>
+
 
                             </div>
                         </div>
