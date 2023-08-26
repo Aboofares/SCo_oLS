@@ -18,7 +18,7 @@
                     <span class="menu-title" data-i18n="">{{trans('mainTransCustom.Dashboard')}} </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="#">{{trans('mainTransCustom.Profile')}} </a></li>
+                    <li class="active"><a class="menu-item" href="{{route('Profile')}}">{{trans('mainTransCustom.Profile')}} </a></li>
                 </ul>
             </li>
 
@@ -36,7 +36,7 @@
                     </li>
                     <li><a class="menu-item" href="#">{{trans('mainTransCustom.School-Settings')}}</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="#">{{trans('mainTransCustom.Stages')}}</a>
+                            <li><a class="menu-item" href="{{route('stagesIndex')}}">{{trans('mainTransCustom.Stages')}}</a>
                             </li>
                             <li><a class="menu-item" href="#">{{trans('mainTransCustom.Grades')}}</a>
                             </li>

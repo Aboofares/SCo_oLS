@@ -33,8 +33,9 @@
 
                 @for($i = 3; $i <= count(Request::segments()); $i++)
                     <li class="breadcrumb-item active">
-                        <a href="">
-                            {{strtoupper(Request::segment($i))}}
+                        <a href="{{Request::segment($i)}}">
+                            {{trans('mainTransCustom.Dashboard')}}
+{{--                            {{strtoupper(Request::segment($i))}}--}}
 {{--                            {{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}--}}
                         </a>
                     </li>
