@@ -6,20 +6,7 @@
 {{trans('mainTransCustom.Profile')}}
 @stop
 @section('CustomHead')
-<style>
 
-    .containerCC {
-        position: relative;
-        text-align: center;
-        color: white;
-    }
-    .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style>
 @endsection
 @section('page_title')
     {{trans('mainTransCustom.Profile')}}
@@ -132,16 +119,11 @@
     <!-- Modal add  -->
 
 
-
     <div class="row">
         <div class="col-3">
             <!--Project Timeline div starts-->
             <div class="card">
-                <div class="card-header">
-                    <div class="card-title-wrap bar-primary">
-                        <div class="card-title">Image</div>
-                    </div>
-                </div>
+
                 <div class="card-body">
 
                     @if( Auth::user()->profileImageURL)
@@ -159,22 +141,25 @@
             <!--Project Timeline div ends-->
         </div>
         <div class="col-9">
-                <!--Project Timeline div starts-->
                     <div class="card">
-                        <div class="card-header">
-                            <div class="card-title-wrap bar-primary">
-                                <div class="card-title">{{ Auth::user()->name }} </div>
-                            </div>
-                        </div>
                         <div class="card-body">
-                            {{ Auth::user()->email}}
-                            <br>
-                         <input value="{{ Auth::user()->password}}" type="password">
-
-
+                            {{ Auth::user()->name }}<br>
+                            {{ Auth::user()->email}}<br>
+                            <hr>
+                        <div class="row">
+    <div class="col-6">
+        <form id="FormResetPassword" method="POST"  action="" enctype="multipart/form-data" class="form">
+            @csrf
+            <input value="{{Auth::user()->id}}" name="id"  id="id" type="hidden" class="form-control round">
+            <label >Password</label>
+            <input  name="passNew"  id="passNew" type="password" class="form-control round">
+            <br>
+            <button type="button" id="btnResetPassword" class="btn btn-danger">   {{trans('sidebar.Reset')}}</button>
+        </form>
+    </div>
+</div>
                         </div>
                     </div>
-                <!--Project Timeline div ends-->
             </div>
     </div>
 
@@ -242,5 +227,30 @@
     </script>
     {{--strt upload img  --}}
 
+
+    {{--strt upload img  --}}
+    <script>
+        $(document).on('click', '#btnResetPassword', function (e) {
+            e.preventDefault();
+            var formData = new FormData($('#FormResetPassword')[0]);
+
+            $.ajax({
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: "{{route('ProfilePassword')}}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (reject) {
+                    console.log(reject);
+                }
+            });
+        });
+    </script>
+    {{--strt upload img  --}}
 @stop
 

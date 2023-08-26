@@ -65,6 +65,8 @@ Route::group(
             Route::get('/Profile', 'index')->name('Profile');
             Route::post('/ProfileIMGURL', 'ProfilePicEdit')->name('ProfileImageUrl');
             Route::post('/ProfileIMGURLE', 'ProfilePicEditE')->name('ProfileImageUrlE');
+
+            Route::post('/ProfilePassword', 'ProfilePassword')->name('ProfilePassword');
         });
         //////////end
 
