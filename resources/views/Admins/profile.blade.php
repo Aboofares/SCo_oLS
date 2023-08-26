@@ -6,7 +6,20 @@
 {{trans('mainTransCustom.Profile')}}
 @stop
 @section('CustomHead')
+<style>
 
+    .containerCC {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
 @endsection
 @section('page_title')
     {{trans('mainTransCustom.Profile')}}
@@ -42,117 +55,111 @@
 
 @section('content')
 
-    <div id="user-profile">
+    <!-- Modal add end-->
+    <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="basicModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="basicModalLabel1">
+                       profilee
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form id="formAddProfilePic" method="POST"  action="" enctype="multipart/form-data" class="form">
+                            @csrf
+                            <input type="text" value="{{ Auth::user()->id}}" class="form-control round" name="ProfileId" id="ProfileId" />
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="Status">{{ trans('sidebar.Picture') }}:</label>
+                                    <input type="file" class="form-control round" name="ProfilePic" id="ProfilePic" />
+                                </div>
 
-        <div class="row">
-            <div class="col-xl-3 col-lg-5 col-md-12">
-                <div class="card">
-                    <div class="card-header pb-0">
-                        <div class="card-title-wrap bar-primary">
-                            <div class="card-title">Work History</div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body p-0 pt-0 pb-1">
-                            <ul>
-                                <li>
-                                    <strong>99%</strong>
-                                    Job Success
-                                </li>
-                                <li>
-                                    <strong>4.9 stars </strong>
-                                    <i class="la la-star yellow darken-2"></i>
-                                    <i class="la la-star yellow darken-2"></i>
-                                    <i class="la la-star yellow darken-2"></i>
-                                    <i class="la la-star yellow darken-2"></i>
-                                    <i class="la la-star yellow darken-2"></i>
-                                <li>
-                                    <strong>1022</strong> Hours Worked</li>
-                                <li>
-                                    <strong>26</strong> Jobs</li>
-
-                            </ul>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn grey btn-secondary" data-dismiss="modal">   {{trans('sidebar.Close')}}</button>
+                                <button type="button" id="btnAddProfilePic" class="btn btn-danger">   {{trans('sidebar.Submit')}}</button>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
-                <div class="card">
-                    <div class="card-header pb-0">
-                        <div class="card-title-wrap bar-primary">
-                            <div class="card-title">Other Details</div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body p-0 pt-0 pb-1">
-                            <ul>
-                                <li>
-                                    <strong>Availability: </strong>
-                                    10-30 hrs / week
-                                </li>
-                                <li>
-                                    <strong>24 hours </strong> response time
 
-                                <li>
-                                    <strong>Languages: </strong> English/ Spanish</li>
+            </div>
+        </div>
+    </div>
+    <!-- Modal add  -->
 
+    <!-- Modal add end-->
+    <div class="modal fade text-left" id="Edit" tabindex="-2" role="dialog" aria-labelledby="basicModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="basicModalLabel1">
+                        profilee edit
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form id="formEditProfilePic" method="POST"  action="" enctype="multipart/form-data" class="form">
+                            @csrf
+                            <input type="text" value="{{ Auth::user()->id}}" class="form-control round" name="ProfileId" id="ProfileId" />
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="Status">{{ trans('sidebar.Picture') }}:</label>
+                                    <input type="file" class="form-control round" name="ProfilePic" id="ProfilePic" />
+                                </div>
 
-                            </ul>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn grey btn-secondary" data-dismiss="modal">   {{trans('sidebar.Close')}}</button>
+                                <button type="button" id="btnEditProfilePic" class="btn btn-danger">   {{trans('sidebar.Submit')}}</button>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Project X</h4>
-                        <div class="heading-elements">
-                            <ul class="list-inline d-block mb-0">
-                                <li>
-                                    <i class="ft-bar-chart font-large-1 danger"></i>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-content collapse show">
-                        <div class="card-body pt-0 pb-1">
-                            <h6 class="text-bold-600"> Task done:
-                                <span>4/10</span>
-                            </h6>
-                            <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="media d-flex">
-                                <div class="align-self-center">
-                                    <h6 class="text-bold-600 mt-2"> Client:
-                                        <span class="info">Xeon Inc.</span>
-                                    </h6>
-                                    <h6 class="text-bold-600 mt-1"> Deadline:
-                                        <span class="blue-grey">June, 2018</span>
-                                    </h6>
-                                </div>
-                                <div class="media-body text-right mt-2">
-                                    <ul class="list-unstyled users-list">
-                                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe" class="avatar avatar-sm pull-up">
-                                            <img class="media-object rounded-circle" src="app-assets/images/portrait/small/avatar-s-19.png" alt="Avatar">
-                                        </li>
-                                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Katherine Nichols" class="avatar avatar-sm pull-up">
-                                            <img class="media-object rounded-circle" src="app-assets/images/portrait/small/avatar-s-18.png" alt="Avatar">
-                                        </li>
-                                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Joseph Weaver" class="avatar avatar-sm pull-up">
-                                            <img class="media-object rounded-circle" src="app-assets/images/portrait/small/avatar-s-17.png" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                        </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal add  -->
+
+
+
+    <div class="row">
+        <div class="col-3">
+            <!--Project Timeline div starts-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-primary">
+                        <div class="card-title">Image</div>
                     </div>
+                </div>
+                <div class="card-body">
+
+                    @if( Auth::user()->profileImageURL)
+
+                            <img src="{{ URL::asset('Images/ProfileImages/Admins/'.Auth::user()->profileImageURL) }}" class="rounded-circle img-border height-100" alt="{{ Auth::user()->name }}">
+                        <a href="#"  data-toggle="modal" data-target="#Edit"> Edit</a>
+                    @else
+               <a href="#" class="profile-image" data-toggle="modal" data-target="#default">
+                    <img src="{{ URL::asset('Theme/rtl/app-assets/images/portrait/small/avatar-s-1.png') }}" class="rounded-circle img-border height-100" alt="{{ Auth::user()->name }}">
+                </a>
+                    @endif
+
                 </div>
             </div>
-            <div class="col-xl-9 col-lg-7 col-md-12">
+            <!--Project Timeline div ends-->
+        </div>
+        <div class="col-9">
                 <!--Project Timeline div starts-->
-                <div id="timeline">
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title-wrap bar-primary">
@@ -167,16 +174,73 @@
 
                         </div>
                     </div>
-                </div>
                 <!--Project Timeline div ends-->
             </div>
-        </div>
     </div>
 
 
 @endsection
 @section('Cjs')
 
+    {{--strt upload img  --}}
+    <script>
+        $(document).on('click', '#btnAddProfilePic', function (e) {
+            e.preventDefault();
+            var formData = new FormData($('#formAddProfilePic')[0]);
+
+            $.ajax({
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: "{{route('ProfileImageUrl')}}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+
+                    console.log(data.selectedimg.pimageURL);
+
+                    $('#AddProfilePicModal').modal('hide');
+                    window.location.reload();
+                },
+                error: function (reject) {
+
+                    console.log(reject);
+                }
+            });
+        });
+    </script>
+    {{--strt upload img  --}}
+
+    {{--strt upload img  --}}
+    <script>
+        $(document).on('click', '#btnEditProfilePic', function (e) {
+            e.preventDefault();
+            var formData = new FormData($('#formEditProfilePic')[0]);
+
+            $.ajax({
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: "{{route('ProfileImageUrl')}}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+
+                    console.log(data.selectedimg.pimageURL);
+
+                    $('#AddProfilePicModal').modal('hide');
+                    window.location.reload();
+                },
+                error: function (reject) {
+
+                    console.log(reject);
+                }
+            });
+        });
+    </script>
+    {{--strt upload img  --}}
 
 @stop
 

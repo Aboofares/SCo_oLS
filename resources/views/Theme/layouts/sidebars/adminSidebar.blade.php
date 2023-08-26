@@ -38,9 +38,9 @@
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('stagesIndex')}}">{{trans('mainTransCustom.Stages')}}</a>
                             </li>
-                            <li><a class="menu-item" href="#">{{trans('mainTransCustom.Grades')}}</a>
+                            <li><a class="menu-item" href="{{route('gradesIndex')}}">{{trans('mainTransCustom.Grades')}}</a>
                             </li>
-                            <li><a class="menu-item" href="#">{{trans('mainTransCustom.Classes')}}</a>
+                            <li><a class="menu-item" href="{{route('ClassroomsIndex')}}">{{trans('mainTransCustom.Classes')}}</a>
                             </li>
                         </ul>
                     </li>

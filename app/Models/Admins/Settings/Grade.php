@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Stage extends Model
+class Grade extends Model
 {
     use HasFactory;
     use HasTranslations;
@@ -14,8 +14,9 @@ class Stage extends Model
     protected $guarded=[''];
     public $timestamps = true;
 
-    public function Sections()
+
+    public function Stage()
     {
-        return $this->hasMany('App\Models\Admins\Settings\Classroom', 'stage_id');
+        return $this->belongsTo('App\Models\Admins\Settings\Stage', 'stage_id');
     }
 }
