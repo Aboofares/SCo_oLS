@@ -358,7 +358,7 @@ class NationalitySeeder extends Seeder
         ];
 
         foreach ($nationality as $n) {
-            Nationality::create(['Nationality_Name' => $n]);
+            Nationality::create(['name' => $n]);
         }
     }
 }

@@ -2,13 +2,13 @@
 
 return [
 
-    'TeacherName'=>'Teacher Name',
-    'Add_Teacher'=>'Add_Teacher',
-    'Edit_Teacher'=>'Edit_Teacher',
-    'Delete_Teacher'=>'Delete_Teacher',
-   'TeacherName_ar'=>'Teacher Arabic Name',
-    'TeacherName_en'=>'Teacher English Name',
-    'specialization'=>'Specialization',
+    'EmployeeName'=>'Employee Name',
+    'Add_Employee'=>'Add_Employee',
+    'Edit_Employee'=>'Edit_Employee',
+    'Delete_Employee'=>'Delete_Employee',
+   'EmployeeName_ar'=>'Employee Arabic Name',
+    'EmployeeName_en'=>'Employee English Name',
+    'Departments'=>'Departments',
     'Gender'=>'Gender',
     'Joining_Date'=>'Joining_Date',
     'Address'=>'Address',

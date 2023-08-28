@@ -25,7 +25,7 @@ class RoleSeeder extends Seeder
             ['en'=> 'junior', 'ar'=> 'مبتدأ'],
         ];
         foreach ($specializations as $S) {
-            Role::create(['Role_Name' => $S]);
+            Role::create(['name' => $S]);
         }
     }
 }

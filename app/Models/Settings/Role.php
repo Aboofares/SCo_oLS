@@ -10,7 +10,7 @@ class Role extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['Role_Name'];
+    public $translatable = ['name'];
     protected $guarded=[''];
     public $timestamps = true;
 }

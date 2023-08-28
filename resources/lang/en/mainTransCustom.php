@@ -7,7 +7,7 @@ return [
     'Settings' => 'Settings',
     'App-Settings' => 'App-Settings',
     'School-Settings' => 'School-Settings',
-
+    'Users' => 'Users',
     'Stages' => 'Stages',
     'Stage' => 'Stage',
     'Stages-List'=>'Stages-List',
@@ -48,5 +48,6 @@ return [
     'loginAdm'=>'Admin login',
     'loginWeb'=>'Web login',
     'login'=>'login',
+    'RestPassword'=>'Rest Password',
 ];
 

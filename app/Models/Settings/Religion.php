@@ -10,7 +10,7 @@ class Religion extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['Religion_Name'];
+    public $translatable = ['name'];
     protected $guarded=[''];
     public $timestamps = true;
 }

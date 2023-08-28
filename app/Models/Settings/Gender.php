@@ -10,7 +10,7 @@ class Gender extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['Gender_Name'];
+    public $translatable = ['name'];
     protected $guarded=[''];
     public $timestamps = true;
 }

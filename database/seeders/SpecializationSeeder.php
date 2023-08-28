@@ -24,7 +24,7 @@ class SpecializationSeeder extends Seeder
             ['en'=> 'English', 'ar'=> 'انجليزي'],
         ];
         foreach ($specializations as $S) {
-            Specialization::create(['Specialization_Name' => $S]);
+            Specialization::create(['name' => $S]);
         }
     }
 }

@@ -24,7 +24,7 @@ class DepartmentSeeder extends Seeder
             ['en'=> 'Marketing', 'ar'=> 'تسويق'],
         ];
         foreach ($specializations as $S) {
-            Department::create(['Department_Name' => $S]);
+            Department::create(['name' => $S]);
         }
     }
 }

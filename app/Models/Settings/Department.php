@@ -10,7 +10,7 @@ class Department extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['Department_Name'];
+    public $translatable = ['name'];
     protected $guarded=[''];
     public $timestamps = true;
 

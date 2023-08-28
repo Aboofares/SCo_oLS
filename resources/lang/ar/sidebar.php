@@ -69,5 +69,8 @@ return [
     'loginEmp'=>'تسجيل دخول موظف',
     'loginWeb'=>'تسجيل دخول ويب',
     'login'=>'تسجيل دخول',
+    'employees'=>'الإداريين',
+    'employees-List'=>'قائمه الإداريين',
+
 
 ];

@@ -46,11 +46,11 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function(){
 
-    Route::get('/a', function () {
+    Route::get('/', function () {
         return view('WebSite.Hwebsite');
     });
 
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('selection');
+    Route::get('/selection', [App\Http\Controllers\HomeController::class, 'index'])->name('selection');
 
     Route::controller(LoginController::class)->group(function () {
         Route::get('/login/{type}', 'loginForm')->middleware('guest')->name('login.show');

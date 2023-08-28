@@ -50,6 +50,19 @@
             </li>
 {{--end tab--}}
 
+            {{--Teacher tab--}}
+            <li class=" nav-item"><a href="#"><i class="ft-users"></i><span class="menu-title" data-i19n="">{{trans('mainTransCustom.Users')}}</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{route('TeachersIndex')}}">{{trans('sidebar.teachers')}}</a>
+                    <li><a class="menu-item" href="{{route('employeesIndex')}}">{{trans('sidebar.employees')}}</a>
+                    </li>
+
+
+
+                </ul>
+            </li>
+            {{--end tab--}}
+
         </ul>
     </div>
 

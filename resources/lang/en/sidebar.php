@@ -67,4 +67,6 @@ return [
     'loginEmp'=>'Employee login',
     'loginWeb'=>'Web login',
     'login'=>'login',
+    'employees'=>'Employees',
+    'employees-List'=>'Employees-List',
 ];

@@ -37,7 +37,7 @@ class ReligionSeeder extends Seeder
         ];
 
         foreach ($religions as $R) {
-            Religion::create(['Religion_Name' => $R]);
+            Religion::create(['name' => $R]);
         }
     }
 }
