@@ -33,8 +33,9 @@ class AdminController extends Controller
         $genders = $this->Admin->GetGender();
         $Nationalities = $this->Admin->GetNationality();
         $religions = $this->Admin->GetReligion();
+        $Roles = $this->Admin->GetRoles();
         return view('Admins.Content.employees.employeeCreate',compact('departments','genders'
-            ,'Nationalities','religions'));
+            ,'Nationalities','religions','Roles'));
     }
 
     /**
@@ -73,8 +74,9 @@ class AdminController extends Controller
         $genders = $this->Admin->GetGender();
         $Nationalities = $this->Admin->GetNationality();
         $religions = $this->Admin->GetReligion();
+        $Roles = $this->Admin->GetRoles();
         return view('Admins.Content.employees.employeeEdit',compact('departments','genders'
-            ,'Nationalities','religions','SelectedAdmin'));
+            ,'Nationalities','religions','SelectedAdmin','Roles'));
     }
 
     /**

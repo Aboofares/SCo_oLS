@@ -11,7 +11,8 @@ return [
     'Stages' => 'Stages',
     'Stage' => 'Stage',
     'Stages-Add' => 'Add Stage',
-
+    'Students' => 'Students',
+    'Students-list' => 'Students-list',
     'Logout' => 'Logout',
     'Classes'=>'Classes',
     'Classes-List'=>'Classes-List',

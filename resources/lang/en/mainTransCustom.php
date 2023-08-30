@@ -49,5 +49,7 @@ return [
     'loginWeb'=>'Web login',
     'login'=>'login',
     'RestPassword'=>'Rest Password',
+    'Roles'=>'Roles',
+    'Roles-List'=>'Roles-List',
 ];
 

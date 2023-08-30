@@ -31,7 +31,13 @@ class AdminsSeeder extends Seeder
         $admins = new Admin();
         $admins->email = 'admin1@yahoo.com';
         $admins->password = Hash::make('12345678');
-        $admins->name = ['en' => 'Emad Mohamed', 'ar' => 'عماد محمد'];
+        $admins->name = ['en' => 'E1 Mohamed', 'ar' => 'م1 محمد'];
+        $admins->nationality_id= 5;
+        $admins->religion_id= 1;
+        $admins->gender_id= 1;
+        $admins->department_id = 1;
+        $admins->profileImageURL = '1.png';
+//        $admins->role_id = 'admin1@yahoo.com';
         $admins->save();
 
 

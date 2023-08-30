@@ -31,10 +31,14 @@ class TeachersSeeder extends Seeder
 //        ]);
 
         DB::table('teachers')->delete();
-        $Student = new Teacher();
-        $Student->email = 'teacher1@yahoo.com';
-        $Student->password = Hash::make('12345678');
-        $Student->name = ['en' => ' Mohamed Mohamed', 'ar' => 'محمد محمد'];
-        $Student->save();
+        $Teacher = new Teacher();
+        $Teacher->email = 'teacher1@yahoo.com';
+        $Teacher->password = Hash::make('12345678');
+        $Teacher->name = ['en' => ' Mohamed Mohamed', 'ar' => 'محمد محمد'];
+        $Teacher->nationality_id  =Nationality::all()->unique()->random()->id ;
+        $Teacher->religion_id  = Religion::all()->unique()->random()->id;
+        $Teacher->gender_id= Gender::all()->unique()->random()->id;
+        $Teacher->specialization_id = '1';
+        $Teacher->save();
     }
 }

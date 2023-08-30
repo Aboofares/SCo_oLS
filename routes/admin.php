@@ -4,7 +4,9 @@ use App\Http\Controllers\Admins\AdminController;
 use App\Http\Controllers\Admins\ProfileController;
 use App\Http\Controllers\Admins\Settings\ClassroomController;
 use App\Http\Controllers\Admins\Settings\GradeController;
+use App\Http\Controllers\Admins\Settings\RoleController;
 use App\Http\Controllers\Admins\Settings\StageController;
+use App\Http\Controllers\Admins\Settings\TeacherClassroomController;
 use App\Http\Controllers\Admins\Teachers\TeacherController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,14 +30,27 @@ Route::group(
 ///////////admin prefix
     Route::prefix('admin')->group(function () {
 
-///////////Stage
+///////////Stage->middleware('can:stages')['middleware' => ['can:stages']],
         Route::controller(StageController::class)->group(function () {
-            Route::get('/settings/stages', 'index')->name('stagesIndex');
+            Route::get('/settings/stages', 'index')->name('stagesIndex')->middleware('can:brands');
             Route::post('/settings/AdStage', 'store')->name('AddStage');
             Route::post('/settings/EdStage', 'update')->name('EditStage');
             Route::post('/settings/DeStage', 'destroy')->name('DeleteStage');
         });
-//////////end
+////////end
+
+//        Route::group(['prefix' => 'brands', 'middleware' => 'can:brands'], function () {
+//            Route::controller(StageController::class)->group(function () {
+//                Route::get('/settings/stages', 'index')->name('stagesIndex') ;
+//                Route::post('/settings/AdStage', 'store')->name('AddStage');
+//                Route::post('/settings/EdStage', 'update')->name('EditStage');
+//                Route::post('/settings/DeStage', 'destroy')->name('DeleteStage');
+//            });
+//        });
+
+
+
+  Route::view('/students','livewire.students.studentIndex')->name('students');
 
 ///////////grade
         Route::controller(GradeController::class)->group(function () {
@@ -89,6 +104,24 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
         });
 //////////end
 
+
+        ///////////employees
+        Route::controller(TeacherClassroomController::class)->group(function () {
+            Route::get('/TeachersClassroom', 'index')->name('TeachersClassroom');
+            Route::post('/TeachersClassroom/store', 'store')->name('TeachersClassroomStore');
+            Route::post('/TeachersClassroom/update', 'update')->name('TeachersClassroomUpdate');
+        });
+//////////end
+
+
+        ///////////RoleController
+        Route::controller(RoleController::class)->group(function () {
+            Route::get('/roles', 'index')->name('rolesIndex');
+            Route::post('/roles/store', 'store')->name('rolesStore');
+            Route::post('/roles/update', 'update')->name('rolesUpdate');
+            Route::post('/roles/delete', 'destroy')->name('rolesDel');
+        });
+//////////end
 
     });
 

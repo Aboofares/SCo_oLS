@@ -27,17 +27,22 @@
                 <ul class="menu-content">
                     <li><a class="menu-item" href="#">{{trans('mainTransCustom.App-Settings')}}</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="#">{{trans('mainTransCustom.Second App Setting')}}</a>
+                            <li><a class="menu-item" href="{{route('rolesIndex')}}">{{trans('mainTransCustom.Roles-List')}}</a>
                             </li>
-                            <li><a class="menu-item" href="#">{{trans('mainTransCustom.First App Setting')}}</a>
+                            <li><a class="menu-item" href="#">---</a>
                             </li>
 
                         </ul>
                     </li>
                     <li><a class="menu-item" href="#">{{trans('mainTransCustom.School-Settings')}}</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="{{route('stagesIndex')}}">{{trans('mainTransCustom.Stages')}}</a>
+{{--                            {{ Auth::user()->name }}--}}
+{{--                            {{ Auth::user()->role_id }}--}}
+                            <li>
+                                <a class="menu-item" href="{{route('stagesIndex')}}">{{trans('mainTransCustom.Stages')}}
+                                </a>
                             </li>
+
                             <li><a class="menu-item" href="{{route('gradesIndex')}}">{{trans('mainTransCustom.Grades')}}</a>
                             </li>
                             <li><a class="menu-item" href="{{route('ClassroomsIndex')}}">{{trans('mainTransCustom.Classes')}}</a>
@@ -50,13 +55,38 @@
             </li>
 {{--end tab--}}
 
-            {{--Teacher tab--}}
+            {{--users tab--}}
             <li class=" nav-item"><a href="#"><i class="ft-users"></i><span class="menu-title" data-i19n="">{{trans('mainTransCustom.Users')}}</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="{{route('TeachersIndex')}}">{{trans('sidebar.teachers')}}</a>
-                    <li><a class="menu-item" href="{{route('employeesIndex')}}">{{trans('sidebar.employees')}}</a>
+
+
+                    <li><a class="menu-item" href="#">{{trans('sidebar.teachers')}}</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('TeachersIndex')}}"> {{trans('sidebar.teachers-List')}}</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('TeachersClassroom')}}">{{trans('sidebar.teachersClassrooms')}} </a>
+                            </li>
+
+                        </ul>
                     </li>
 
+                    <li><a class="menu-item" href="#">{{trans('sidebar.employees')}}</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('employeesIndex')}}">{{trans('sidebar.employees-List')}} </a>
+                            </li>
+                            <li><a class="menu-item" href="#">dd </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li><a class="menu-item" href="#">{{trans('sidebar.Students')}}</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('students')}}">{{trans('sidebar.Students-list')}} </a>
+                            </li>
+                        </ul>
+                    </li>
 
 
                 </ul>
