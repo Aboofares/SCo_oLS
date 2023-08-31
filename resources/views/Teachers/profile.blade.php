@@ -1,6 +1,6 @@
 
 
-@extends('Theme.layouts.master')
+@extends('Theme.layouts.masterT')
 
 @section('page_header')
 {{trans('mainTransCustom.Profile')}}
@@ -18,7 +18,7 @@
         <div class="breadcrumb-wrapper mr-1">
             <ol class="breadcrumb">
 
-                <li class="breadcrumb-item"><a href="{{route('Admindashboard')}}">
+                <li class="breadcrumb-item"><a href="#">
                         {{trans('mainTransCustom.Dashboard')}}</a>
                 </li>
 
@@ -128,7 +128,7 @@
 
                     @if( Auth::user()->profileImageURL)
 
-                            <img src="{{ URL::asset('Images/ProfileImages/Admins/'.Auth::user()->profileImageURL) }}" class="rounded-circle img-border height-100" alt="{{ Auth::user()->name }}">
+                            <img src="{{ URL::asset('Images/ProfileImages/Teachers/'.Auth::user()->profileImageURL) }}" class="rounded-circle img-border height-100" alt="{{ Auth::user()->name }}">
                         <a href="#"  data-toggle="modal" data-target="#Edit"> Edit</a>
                     @else
                <a href="#" class="profile-image" data-toggle="modal" data-target="#default">
@@ -176,16 +176,16 @@
             $.ajax({
                 type: 'post',
                 enctype: 'multipart/form-data',
-                url: "{{route('ProfileImageUrl')}}",
+                url: "{{route('TProfileImageUrl')}}",
                 data: formData,
                 processData: false,
                 contentType: false,
                 cache: false,
                 success: function (data) {
 
-                    console.log(data.selectedimg.pimageURL);
+                    // console.log(data.selectedimg.pimageURL);
 
-                    $('#AddProfilePicModal').modal('hide');
+                    // $('#AddProfilePicModal').modal('hide');
                     window.location.reload();
                 },
                 error: function (reject) {
@@ -206,12 +206,17 @@
             $.ajax({
                 type: 'post',
                 enctype: 'multipart/form-data',
-                url: "{{route('ProfileImageUrlE')}}",
+                url: "{{route('TProfileImageUrlE')}}",
                 data: formData,
                 processData: false,
                 contentType: false,
                 cache: false,
                 success: function (data) {
+
+                    // console.log(data.selectedimg.pimageURL);
+                    // console.log(data);
+                    // $('#AddProfilePicModal').modal('hide');
+                    // window.location.reload();
 
                     // console.log(data.selectedimg.pimageURL);
 
@@ -237,7 +242,7 @@
             $.ajax({
                 type: 'post',
                 enctype: 'multipart/form-data',
-                url: "{{route('ProfilePassword')}}",
+                url: "{{route('TProfilePassword')}}",
                 data: formData,
                 processData: false,
                 contentType: false,

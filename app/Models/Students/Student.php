@@ -2,8 +2,10 @@
 
 namespace App\Models\Students;
 
+use App\Models\Admins\Settings\Classroom;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Translatable\HasTranslations;
 
@@ -40,5 +42,7 @@ class Student extends Authenticatable
     {
         return $this->belongsTo('App\Models\Families\Family', 'family_id');
     }
+
+
 
 }

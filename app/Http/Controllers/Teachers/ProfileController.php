@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admins;
+namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admins\Admin;
+use App\Models\Teachers\Teacher;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -14,7 +15,7 @@ class ProfileController extends Controller
     public function index()
     {
 
-        return view('Admins.profile');
+        return view('Teachers.profile');
     }
 
     public function ProfilePicEdit(Request $request){
@@ -25,16 +26,15 @@ class ProfileController extends Controller
         // save file
         $file_extension=$request->file('ProfilePic')->getClientOriginalExtension();
         $file_name= $ProfileId.'.'.$file_extension;
-        $path='Images/ProfileImages/Admins';
+        $path='Images/ProfileImages/Teachers';
         $request->file('ProfilePic')->move($path,$file_name);
 
-                Admin::where('id', $ProfileId)
+        Teacher::where('id', $ProfileId)
             ->update([
                 'profileImageURL' => $file_name,
 
             ]);
-                $selectedimg=Admin::find($ProfileId);
-
+        $selectedimg=Teacher::find($ProfileId);
         if($ProfileId)
         {
             return response()->json(['status' =>true,'msg'=>"saved",'selectedimg'=>$selectedimg ]);
@@ -46,28 +46,29 @@ class ProfileController extends Controller
     }
 
     public function ProfilePicEditE(Request $request){
-        $user=Admin::find($request->ProfileId);
+
+
+        $user=Teacher::find($request->ProfileId);
         $r=$request->file('ProfilePic');
         $ProfileId=$request->ProfileId;
 
         $person = json_decode($user);
-        File::delete( 'Images/ProfileImages/Admins/'.$person->profileImageURL);
-//        File::delete( 'Images/ProfileImages/Admins'.$person->profileImageURL);
-        Admin::where('id', $person->id)->update(['profileImageURL' => null ]);
+//        Storage::delete(''.auth()->user()->profileImageURL);
+        File::delete( 'Images/ProfileImages/Teachers/'.$person->profileImageURL);
+        Teacher::where('id', $person->id)->update(['profileImageURL' => null ]);
 
-        // save file
+// save file
         $file_extension=$request->file('ProfilePic')->getClientOriginalExtension();
         $file_name= $ProfileId.'.'.$file_extension;
-        $path='Images/ProfileImages/Admins';
+        $path='Images/ProfileImages/Teachers';
         $request->file('ProfilePic')->move($path,$file_name);
 
-        Admin::where('id', $ProfileId)
+        Teacher::where('id', $ProfileId)
             ->update([
                 'profileImageURL' => $file_name,
 
             ]);
-        $selectedimg=Admin::find($ProfileId);
-
+        $selectedimg=Teacher::find($ProfileId);
         if($ProfileId)
         {
             return response()->json(['status' =>true,'msg'=>"saved",'selectedimg'=>$selectedimg ]);
@@ -78,18 +79,17 @@ class ProfileController extends Controller
 
 
 
-
     }
 
     public function ProfilePassword(Request $request)
     {
-        $user=Admin::find($request->id);
+        $user=Teacher::find($request->id);
 
         $passNew=$request->passNew;
 
         $person = json_decode($user);
 
-        Admin::where('id', $request->id)
+        Teacher::where('id', $request->id)
             ->update([
                 'password' => Hash::make($passNew),
 
@@ -97,7 +97,7 @@ class ProfileController extends Controller
 
         if($user)
         {
-            return response()->json(['status' =>true,'msg'=>"Selected"]);
+            return response()->json(['status' =>true,'msg'=>"Changed"]);
         }
         else{
             return response()->json(['status' =>false,'msg'=>"not Selected"]);

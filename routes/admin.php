@@ -6,6 +6,7 @@ use App\Http\Controllers\Admins\Settings\ClassroomController;
 use App\Http\Controllers\Admins\Settings\GradeController;
 use App\Http\Controllers\Admins\Settings\RoleController;
 use App\Http\Controllers\Admins\Settings\StageController;
+use App\Http\Controllers\Admins\Settings\StudentClassroomController;
 use App\Http\Controllers\Admins\Settings\TeacherClassroomController;
 use App\Http\Controllers\Admins\Teachers\TeacherController;
 use Illuminate\Support\Facades\Auth;
@@ -105,13 +106,36 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
 //////////end
 
 
-        ///////////employees
+        ///////////TeacherClassroomController
         Route::controller(TeacherClassroomController::class)->group(function () {
             Route::get('/TeachersClassroom', 'index')->name('TeachersClassroom');
             Route::post('/TeachersClassroom/store', 'store')->name('TeachersClassroomStore');
             Route::post('/TeachersClassroom/update', 'update')->name('TeachersClassroomUpdate');
         });
 //////////end
+
+///////////StudentClassroomController
+        Route::controller(StudentClassroomController::class)->group(function () {
+            Route::get('/StudentsClassroom', 'index')->name('StudentsClassroom');
+            Route::post('/StudentsClassroom/store', 'store')->name('StudentsClassroomStore');
+            Route::post('/StudentsClassroom/update', 'update')->name('StudentsClassroomUpdate');
+        });
+//////////end
+
+
+///////////Course
+        Route::controller(\App\Http\Controllers\Admins\Settings\CourseController::class)->group(function () {
+            Route::get('/settings/courses', 'index')->name('coursesIndex');
+            Route::post('/settings/AdCourse', 'store')->name('AddCourse');
+            Route::post('/settings/EdCourse', 'update')->name('EditCourse');
+            Route::post('/settings/DeCourse', 'destroy')->name('DeleteCourse');
+        });
+//////////end
+
+
+
+
+
 
 
         ///////////RoleController
@@ -124,5 +148,10 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
 //////////end
 
     });
+
+
+
+
+
 
 });
