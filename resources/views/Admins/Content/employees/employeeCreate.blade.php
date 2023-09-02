@@ -227,7 +227,7 @@
                                                 <div class="position-relative has-icon-left">
 
                                                     <select class="form-control" name="religion_id">
-                                                        <option selected disabled>{{trans('employee.Choose')}}
+                                                        <option selected disabled>{{trans('family.Choose')}}
                                                             ...
                                                         </option>
                                                         @foreach($religions as $religion)
@@ -247,7 +247,7 @@
                                     </div>
                                     <div class="row">
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="jd">{{trans('employee.Joining_Date')}}</label>
                                                 <div class="position-relative has-icon-left">
@@ -261,7 +261,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>{{trans('employee.Departments')}}</label>
                                                 <div class="position-relative has-icon-left">
@@ -276,6 +276,28 @@
                                                         @endforeach
                                                     </select>
                                                     @error('Department_id')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                                    <div class="form-control-position">
+                                                        <i class="ft-briefcase"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>{{trans('mainTransCustom.Roles-List')}}</label>
+                                                <div class="position-relative has-icon-left">
+
+                                                    <select class="form-control" name="Role_id">
+                                                        <option selected disabled>{{trans('family.Choose')}}
+                                                            ...
+                                                        </option>
+                                                        @foreach($Roles as $Role)
+                                                            <option value="{{$Role->id}}">{{$Role->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    @error('Role_id')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                     @enderror
                                                     <div class="form-control-position">
@@ -317,13 +339,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-actions right">
+                                <div class="row">
                                     <a class="btn btn-danger mr-1" href="{{route('employeesIndex')}}">
                                         <i class="ft-x"></i> {{trans('sidebar.Close')}}
                                     </a>
                                     <button type="submit" class="btn btn-primary">
                                         <i class="la la-check-square-o"></i> {{trans('employee.Save')}}
                                     </button>
+
                                 </div>
                             </form>
 

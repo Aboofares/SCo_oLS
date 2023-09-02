@@ -22,7 +22,7 @@ return [
 
     //معلومات الام
     'Name_Mother' => 'Mother Name Arabic',
-    'Mother' => 'Mother',
+    'Mother' => 'Mother Name',
     'Name_Mother_en' => 'Mother Name English',
     'Job_Mother' => 'Job Title ',
 
@@ -38,9 +38,14 @@ return [
     'Attachments' => 'Attachments',
     'Processes' => 'Processes',
     'ConfirmQuestion' => 'Are you sure saving this data?',
-    'Father' => 'Father',
-
+    'Father' => 'Father Name',
+    'studentName' => 'Student Name',
     'EducationRightTo' => 'Education RightTo',
     'familyNote' => 'family Note',
     'FamilyStatus' => 'Family Status',
+    'Status_Student' => 'Student Status',
+    'Nationalities_Student' => 'Student Nationality',
+    'Religions_Student' => 'Student Religion',
+    'Genders_Student' => 'Student Gender',
+
 ];

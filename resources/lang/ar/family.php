@@ -19,6 +19,10 @@ return [
     'Passport_ID_Father' => 'رقم جواز السفر',
     'Phone_Father' => 'رقم الهاتف',
     'Nationality_Father_id' => 'الجنسية',
+    'Nationalities_Student' => 'جنسية الطالب',
+    'Religions_Student' => 'ديانه الطالب',
+    'Genders_Student' => 'نوع الطالب',
+    'Status_Student' => 'حاله الطالب',
     'Blood_Type_Father_id' => 'فصلية الدم',
     'Religion_Father_id' => 'الديانة',
     'Address_Father' => 'عنوان الاب',
@@ -46,5 +50,7 @@ return [
     'familyNote' => 'ملاحظات',
     'FamilyStatus' => 'حالة الأسرة',
 
+
+    'studentName' => 'اسم الطالب',
 
 ];

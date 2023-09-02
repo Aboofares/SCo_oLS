@@ -9,6 +9,7 @@ use App\Models\Settings\Department;
 use App\Models\Settings\Gender;
 use App\Models\Settings\Nationality;
 use App\Models\Settings\Religion;
+use App\Models\Settings\Role;
 use App\Models\Settings\Specialization;
 use Illuminate\Support\Facades\Hash;
 
@@ -44,6 +45,10 @@ class AdminRepository implements AdminRepositoryInterface
         return Department::all();
     }
 
+    public function GetRoles ()
+    {
+        return Role::all();
+    }
 
     public function SaveAdmin ($request)
     {
@@ -63,7 +68,7 @@ class AdminRepository implements AdminRepositoryInterface
             }elseif($n = 2){
                 $AdminN->Uni_Id = $request->UniqueIdPP;
             }
-
+            $AdminN->role_id = $request->Role_id;
             $AdminN->department_id = $request->Department_id;
             $AdminN->gender_id  = $request->Gender_id;
             $AdminN->religion_id = $request->religion_id;
@@ -111,7 +116,7 @@ class AdminRepository implements AdminRepositoryInterface
             }elseif($n = 2){
                 $AdminN->Uni_Id = $request->UniqueIdPP;
             }
-
+            $AdminN->role_id = $request->Role_id;
             $AdminN->department_id = $request->Department_id;
             $AdminN->gender_id  = $request->Gender_id;
             $AdminN->religion_id = $request->religion_id;
@@ -120,7 +125,7 @@ class AdminRepository implements AdminRepositoryInterface
             $AdminN->hiringDate = $request->Joining_Date;
             $AdminN->save();
 
-            toastr( $message = trans('messages.Update'),  $type = 'success',  $title = ' ');
+            toastr( $message = trans('messages.Update'),  $type = 'warning',  $title = ' ');
             return redirect()->route('employeesIndex');
 
         }

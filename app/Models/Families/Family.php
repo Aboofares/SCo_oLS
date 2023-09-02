@@ -11,7 +11,19 @@ class Family extends Authenticatable
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['name'];
+    public $translatable = ['Father_Name','Mother_Name'];
     protected $guarded=[''];
     public $timestamps = true;
+
+    // علاقة بين المعلمين والانواع لجلب Religion
+    public function Religions()
+    {
+        return $this->belongsTo('App\Models\Settings\Religion', 'religion_id');
+    }
+
+    // علاقة بين المعلمين والانواع لجلب Nationality
+    public function Nationalities()
+    {
+        return $this->belongsTo('App\Models\Settings\Nationality', 'nationality_id');
+    }
 }

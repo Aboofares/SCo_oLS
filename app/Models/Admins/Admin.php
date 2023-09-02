@@ -40,5 +40,28 @@ class Admin extends Authenticatable
         return $this->belongsTo('App\Models\Settings\Department', 'department_id');
     }
 
+    public function Roles()
+    {
+        return $this->belongsTo('App\Models\Settings\Role', 'role_id');
+    }
+
+
+    public function hasAbility($permissions)    //products  //mahoud -> admin can't see brands
+    {
+        $role = $this->Roles;
+
+        if (!$role) {
+            return false;
+        }
+
+        foreach ($role->permissions as $permission) {
+            if (is_array($permissions) && in_array($permission, $permissions)) {
+                return true;
+            } else if (is_string($permissions) && strcmp($permissions, $permission) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

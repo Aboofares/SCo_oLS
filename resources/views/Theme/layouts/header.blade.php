@@ -50,7 +50,7 @@
 
                                         <span class="user-name text-bold-700 ml-1"> {{ Auth::user()->name }} </span></span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ft-user"></i> {{trans('mainTransCustom.Profile')}}</a>
+                                <a class="dropdown-item" href="{{route('Profile')}}"><i class="ft-user"></i> {{trans('mainTransCustom.Profile')}}</a>
                                 <div class="dropdown-divider"></div>
                                 <div class="dropdown-item">
                                 @if(auth('student')->check())

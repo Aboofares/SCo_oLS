@@ -2,7 +2,7 @@
 
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row position-relative">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{ url('/dashboard') }}">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{ url('teacher/dashboard') }}">
                     <img class="brand-logo" alt="logo" src="{{ URL::asset('Theme/ltr/app-assets/images/logo/logo.png') }}" />
                     <h3 class="brand-text">{{trans('sidebar.App-Name')}} </h3>
                 </a></li>
@@ -13,11 +13,13 @@
     <div class="navigation-background"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="#"><i class="ft-home"></i>
-                    <span class="menu-title" data-i18n="">Teacher</span>
-                    <span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
+            <li class=" nav-item">
+                <a href="#"><i class="ft-home"></i>
+                    <span class="menu-title" data-i18n="">{{trans('mainTransCustom.Dashboard')}}</span>
+
+                </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="#">{{trans('sidebar.Profile')}}</a></li>
+                    <li class="-menu-item"><a class="menu-item" href="{{route('TProfile')}}">{{trans('sidebar.Profile')}}</a></li>
                 </ul>
             </li>
 

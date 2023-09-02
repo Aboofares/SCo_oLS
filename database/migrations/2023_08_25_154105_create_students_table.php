@@ -19,7 +19,6 @@ class CreateStudentsTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('Uni_IdType')->nullable();
             $table->string('Uni_Id')->nullable();
             $table->date('dateOfBirth')->nullable();
             $table->bigInteger('nationality_id')->unsigned()->nullable();
@@ -29,6 +28,12 @@ class CreateStudentsTable extends Migration
             $table->bigInteger('gender_id')->unsigned()->nullable();
             $table->foreign('gender_id')->references('id')->on('genders')->onDelete('cascade');
             $table->string('profileImageURL')->nullable();
+            $table->string('studentStatus')->nullable();
+//            $table->bigInteger('studentStatus_id')->unsigned()->nullable();
+//            $table->foreign('studentStatus_id')->references('id')->on('')->onDelete('cascade');
+            $table->bigInteger('family_id')->unsigned()->nullable();
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
+
             $table->rememberToken();
             $table->timestamps();
         });

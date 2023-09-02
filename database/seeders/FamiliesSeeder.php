@@ -34,11 +34,16 @@ class FamiliesSeeder extends Seeder
 //        $my_parents->Religion_Mother_id = Religion::all()->unique()->random()->id;
 //        $my_parents->save();
 
-        DB::table('students')->delete();
+        DB::table('families')->delete();
         $Family = new Family();
         $Family->email = 'parent@yahoo.com';
         $Family->password = Hash::make('12345678');
-        $Family->name = ['en' => ' parent parent', 'ar' => 'عائله 1'];
+        $Family->Father_Name= ['en' => 'Emad Mohamed', 'ar' => 'عماد محمد'];
+        $Family->Father_nationality_id= Nationality::all()->unique()->random()->id ;
+        $Family->Father_religion_id=  Religion::all()->unique()->random()->id;
+        $Family->Mother_Name= ['en' => 'SS', 'ar' => 'سس'];
+        $Family->Mother_nationality_id= Nationality::all()->unique()->random()->id;
+        $Family->Mother_religion_id= Religion::all()->unique()->random()->id;
         $Family->save();
     }
 }

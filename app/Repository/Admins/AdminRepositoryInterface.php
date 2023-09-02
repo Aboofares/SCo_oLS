@@ -18,6 +18,8 @@ interface AdminRepositoryInterface
 
     public function GetDepartment ();
 
+    public function GetRoles ();
+
     public function SaveAdmin ($request);
 
     public function EditAdmin ($id);
