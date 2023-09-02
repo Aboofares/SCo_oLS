@@ -168,10 +168,13 @@ class Student extends Component
                     'family_id' => $insertedFamilyId,
                 ]);
 
-            $this->successMessage = trans('messages.success');
+//            $this->successMessage = trans('messages.success');
+            toastr( $message = trans('messages.success'),  $type = 'success',  $title = ' ');
+
             $this->clearForm();
             $this->currentStep = 1;
-//            return redirect()->to('/add-family');
+
+            return redirect()->to('admin/students');
         }
         catch(\Exception $e){
             $this->catchError = $e->getMessage();
@@ -202,6 +205,7 @@ class Student extends Component
 //
 //
 //            $this->successMessage = trans('messages.success');
+        toastr( $message = trans('messages.Update'),  $type = 'warning',  $title = ' ');
             return redirect()->to('admin/students');
 
     }
@@ -221,6 +225,9 @@ class Student extends Component
         $this->Uni_Id = '';
         $this->SBirthdate = '';
         $this->studentStatus = '';
+        $this->FNationality_id= '';
+        $this->FReligion_id= '';
+        $this->FBirthdate= '';
 
     }
 
@@ -270,6 +277,7 @@ class Student extends Component
         $student = \App\Models\Students\Student::findOrFail($id);
         $Family = Family::where('id',$student->family_id)->delete();
         $student->delete();
+        toastr( $message = trans('messages.Delete'),  $type = 'error',  $title = ' ');
         return redirect()->to('admin/students');
     }
 }

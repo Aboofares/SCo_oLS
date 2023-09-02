@@ -218,7 +218,7 @@
                                                     <form action="{{route('DeleteStage')}}" method="post">
 
                                                         @csrf
-                                                        <input id="id" name="id" type="text"  value="{{ $stage->id }}"/>
+                                                        <input id="id" name="id" type="hidden"  value="{{ $stage->id }}"/>
                                                         {{trans('mainTransCustom.Warning')}}
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn grey btn-secondary" data-dismiss="modal">   {{trans('mainTransCustom.Close')}}</button>

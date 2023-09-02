@@ -101,7 +101,7 @@ class StudentClassroomController extends Controller
 
                 ]);
         }
-        toastr( $message = trans('messages.success'),  $type = 'success',  $title = ' ');
+        toastr( $message = trans('messages.success'),  $type = 'warning',  $title = ' ');
         return redirect()->route('StudentsClassroom');
     }
 

@@ -87,7 +87,7 @@ class RoleController extends Controller
         try {
             $role = Role::findOrFail($request->id);
             $role = $this->process($role, $request);
-            toastr( $message = trans('messages.success'),  $type = 'success',  $title = ' ');
+            toastr( $message = trans('messages.success'),  $type = 'warning',  $title = ' ');
             return redirect()->route('rolesIndex');
         }
 

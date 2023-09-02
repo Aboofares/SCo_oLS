@@ -103,12 +103,12 @@
                                     <div class="position-relative has-icon-left">
 
                                         <select class="form-control" wire:model="SGender_id">
-                                            <option selected disabled>{{trans('family.Choose')}}
+                                            <option >{{trans('family.Choose')}}
                                                 ...
                                             </option>
-                                                @foreach($Genders as $gender)
-                                                    <option value="{{$gender->id}}">{{$gender->name}}</option>
-                                                @endforeach
+{{--                                                @foreach($Genders as $gender)--}}
+{{--                                                    <option value="{{$gender->id}}">{{$gender->name}}</option>--}}
+{{--                                                @endforeach--}}
                                         </select>
                                         @error('SGender_id')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -126,7 +126,7 @@
                                     <div class="position-relative has-icon-left">
 
                                         <select class="form-control" wire:model="SNationality_id">
-                                            <option selected disabled>{{trans('family.Choose')}}
+                                            <option>{{trans('family.Choose')}}
                                                 ...
                                             </option>
                                             @foreach($Nationalities as $Nationality)
@@ -150,7 +150,9 @@
                                     <div class="position-relative has-icon-left">
 
                                         <select class="form-control" wire:model="SReligion_id"  >
-
+                                            <option >{{trans('family.Choose')}}
+                                                ...
+                                            </option>
                                             @foreach($Religions as $religion)
                                                 <option value="{{$religion->id}}">{{$religion->name}}</option>
                                             @endforeach

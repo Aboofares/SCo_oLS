@@ -125,7 +125,7 @@ class AdminRepository implements AdminRepositoryInterface
             $AdminN->hiringDate = $request->Joining_Date;
             $AdminN->save();
 
-            toastr( $message = trans('messages.Update'),  $type = 'success',  $title = ' ');
+            toastr( $message = trans('messages.Update'),  $type = 'warning',  $title = ' ');
             return redirect()->route('employeesIndex');
 
         }

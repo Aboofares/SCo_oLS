@@ -105,7 +105,7 @@ class TeacherClassroomController extends Controller
                     'status' => true,
                 ]);
         }
-        toastr( $message = trans('messages.success'),  $type = 'success',  $title = ' ');
+        toastr( $message = trans('messages.success'),  $type = 'warning',  $title = ' ');
         return redirect()->route('TeachersClassroom');
     }
 

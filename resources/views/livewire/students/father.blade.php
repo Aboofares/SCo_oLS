@@ -16,7 +16,7 @@
                                 <div class="position-relative has-icon-left">
 
                                     <select class="form-control" wire:model="FNationality_id">
-                                        <option selected disabled>{{trans('family.Choose')}}
+                                        <option >{{trans('family.Choose')}}
                                             ...
                                         </option>
                                         @foreach($Nationalities as $Nationality)
@@ -40,7 +40,7 @@
                                 <div class="position-relative has-icon-left">
 
                                     <select class="form-control" wire:model="FReligion_id">
-                                        <option selected disabled>{{trans('family.Choose')}}
+                                        <option >{{trans('family.Choose')}}
                                             ...
                                         </option>
                                         @foreach($Religions as $religion)
