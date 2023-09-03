@@ -40,16 +40,6 @@ Route::group(
         });
 ////////end
 
-//        Route::group(['prefix' => 'brands', 'middleware' => 'can:brands'], function () {
-//            Route::controller(StageController::class)->group(function () {
-//                Route::get('/settings/stages', 'index')->name('stagesIndex') ;
-//                Route::post('/settings/AdStage', 'store')->name('AddStage');
-//                Route::post('/settings/EdStage', 'update')->name('EditStage');
-//                Route::post('/settings/DeStage', 'destroy')->name('DeleteStage');
-//            });
-//        });
-
-
 
   Route::view('/students','livewire.students.studentIndex')->name('students');
 
@@ -105,7 +95,6 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
         });
 //////////end
 
-
         ///////////TeacherClassroomController
         Route::controller(TeacherClassroomController::class)->group(function () {
             Route::get('/TeachersClassroom', 'index')->name('TeachersClassroom');
@@ -122,7 +111,6 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
         });
 //////////end
 
-
 ///////////Course
         Route::controller(\App\Http\Controllers\Admins\Settings\CourseController::class)->group(function () {
             Route::get('/settings/courses', 'index')->name('coursesIndex');
@@ -131,12 +119,6 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
             Route::post('/settings/DeCourse', 'destroy')->name('DeleteCourse');
         });
 //////////end
-
-
-
-
-
-
 
         ///////////RoleController
         Route::controller(RoleController::class)->group(function () {
@@ -147,6 +129,13 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
         });
 //////////end
 
+
+        ///////////WebsiteSettingController
+        Route::controller(\App\Http\Controllers\Admins\Marketing\WebsiteSettingController::class)->group(function () {
+            Route::get('/WS-setting', 'index')->name('WSIndex');
+            Route::post('/WS-settingED', 'update')->name('WSSettingED');
+        });
+//////////end
     });
 
 

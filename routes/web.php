@@ -50,6 +50,10 @@ Route::group(
         return view('WebSite.Hwebsite');
     });
 
+    Route::get('/nw', function () {
+        return view('WebSite.Index');
+    });
+
     Route::get('/selection', [App\Http\Controllers\HomeController::class, 'index'])->name('selection');
 
     Route::controller(LoginController::class)->group(function () {

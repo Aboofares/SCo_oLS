@@ -29,7 +29,7 @@
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('rolesIndex')}}">{{trans('mainTransCustom.Roles-List')}}</a>
                             </li>
-                            <li><a class="menu-item" href="#">---</a>
+                            <li><a class="menu-item" href="{{route('WSIndex')}}">WSIndex</a>
                             </li>
 
                         </ul>
