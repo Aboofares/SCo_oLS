@@ -51,6 +51,6 @@
  <script src="{{asset('WebSite/js/owl.carousel.min.js')}}"></script>
  <script src="{{asset('WebSite/js/scrollspy.min.js')}}"></script>
  <script src="{{asset('WebSite/js/custom.js')}}"></script>
- </>
+ </body>
 </html>
 
