@@ -10,7 +10,7 @@ class Nationality extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['Nationality_Name'];
+    public $translatable = ['name'];
     protected $guarded=[''];
     public $timestamps = true;
 }

@@ -55,7 +55,7 @@
 {{--                @endif--}}
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/')}}">Log in</a>
+                    <a class="nav-link" href="{{route('selection')}}">Log in</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/register')}}">Register</a>

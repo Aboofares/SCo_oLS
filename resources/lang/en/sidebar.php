@@ -11,7 +11,8 @@ return [
     'Stages' => 'Stages',
     'Stage' => 'Stage',
     'Stages-Add' => 'Add Stage',
-
+    'Students' => 'Students',
+    'Students-list' => 'Students-list',
     'Logout' => 'Logout',
     'Classes'=>'Classes',
     'Classes-List'=>'Classes-List',
@@ -67,4 +68,6 @@ return [
     'loginEmp'=>'Employee login',
     'loginWeb'=>'Web login',
     'login'=>'login',
+    'employees'=>'Employees',
+    'employees-List'=>'Employees-List',
 ];

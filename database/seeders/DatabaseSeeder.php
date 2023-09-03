@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NationalitySeeder::class);
         $this->call(BloodTypeSeeder::class);
 
-        $this->call(RoleSeeder::class);
+//    $this->call(RoleSeeder::class);
         $this->call(SpecializationSeeder::class);
         $this->call(DepartmentSeeder::class);
 
@@ -33,5 +33,6 @@ class DatabaseSeeder extends Seeder
         $this->call(studentsSeeder::class);
 
         $this->call(StagesSeeder::class);
+//        $this->call(WebsiteSettingsSeeder::class);
     }
 }

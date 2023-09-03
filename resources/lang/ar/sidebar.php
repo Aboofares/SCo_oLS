@@ -7,6 +7,10 @@ return [
      'Profile' => 'الملف الشخصى',
     'Settings' => 'الأعدادات',
     'App-Settings' => 'إعدادات البرنامج',
+
+    'Students' => 'الطلاب',
+    'Students-list' => 'قائمة الطلاب',
+
     'School-Settings' => 'إعدادات المدرسة',
     'Stages-list' => 'قائمة المراحل الدراسية',
     'Stages' => 'المراحل الدراسية',
@@ -69,5 +73,8 @@ return [
     'loginEmp'=>'تسجيل دخول موظف',
     'loginWeb'=>'تسجيل دخول ويب',
     'login'=>'تسجيل دخول',
+    'employees'=>'الإداريين',
+    'employees-List'=>'قائمه الإداريين',
+
 
 ];

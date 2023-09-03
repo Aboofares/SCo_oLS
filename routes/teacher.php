@@ -20,4 +20,27 @@ Route::group(
         return view('Teachers.dashboard');
     });
 
+
+
+
+
+
+///////////admin prefix
+    Route::prefix('teacher')->group(function () {
+
+        ///////////profile
+        Route::controller(\App\Http\Controllers\Teachers\ProfileController::class)->group(function () {
+            Route::get('/Profile', 'index')->name('TProfile');
+        Route::post('/ProfileIMGURL', 'ProfilePicEdit')->name('TProfileImageUrl');
+        Route::post('/ProfileIMGURLE', 'ProfilePicEditE')->name('TProfileImageUrlE');
+        Route::post('/ProfilePassword', 'ProfilePassword')->name('TProfilePassword');
+        });
+        //////////end
+
+    });
+
+
+
+
+
 });

@@ -10,7 +10,7 @@ class Specialization extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['Specialization_Name'];
+    public $translatable = ['name'];
     protected $guarded=[''];
     public $timestamps = true;
 }

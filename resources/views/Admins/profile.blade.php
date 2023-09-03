@@ -206,16 +206,16 @@
             $.ajax({
                 type: 'post',
                 enctype: 'multipart/form-data',
-                url: "{{route('ProfileImageUrl')}}",
+                url: "{{route('ProfileImageUrlE')}}",
                 data: formData,
                 processData: false,
                 contentType: false,
                 cache: false,
                 success: function (data) {
 
-                    console.log(data.selectedimg.pimageURL);
+                    // console.log(data.selectedimg.pimageURL);
 
-                    $('#AddProfilePicModal').modal('hide');
+                    // $('#AddProfilePicModal').modal('hide');
                     window.location.reload();
                 },
                 error: function (reject) {

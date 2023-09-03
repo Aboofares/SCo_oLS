@@ -13,5 +13,13 @@ return [
     'Joining_Date'=>'تاريخ التعين',
     'Address'=>'العنوان',
     'Save'=>'حفظ',
+    'Nationality'=>'الجنسية',
+    'religion'=>'الديانه',
+    'UniqueIdType'=>'نوع أثبات الشخصية',
+    'UniqueIdPA'=>'باسبور',
+    'UniqueIdSS'=>'بطاقة',
+    'Num'=>'الرقم القومي',
+    'NumP'=>'رقم الباسبور',
+    'Birthdate'=>'تاريخ الميلاد',
 
 ];
