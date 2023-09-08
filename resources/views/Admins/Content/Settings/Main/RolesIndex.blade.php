@@ -56,12 +56,12 @@
                         @csrf
                         <div class="row">
                             <div class="col-6">
-                                <label for="Name_ar" class="mr-sm-2">{{ trans('sidebar.Name_ar') }}  :</label>
-                                <input id="Name_ar" name="Name_ar" type="text"  class="form-control round">
+                                <label class="mr-sm-2">{{ trans('sidebar.Name_ar') }}  :</label>
+                                <input   name="Name_ar" type="text"  class="form-control round">
                             </div>
                             <div class="col-6">
-                                <label for="Name_en" class="mr-sm-2">{{ trans('sidebar.Name_en') }} :</label>
-                                <input id="Name_en" name="Name_en" type="text" class="form-control round">
+                                <label   class="mr-sm-2">{{ trans('sidebar.Name_en') }} :</label>
+                                <input   name="Name_en" type="text" class="form-control round">
                             </div>
                         </div>
                         <div class="row">
@@ -142,7 +142,10 @@
                                 @isset($roles)
                                     @foreach($roles as $role)
                                         <tr>
-                                            <td>{{$role->name}}</td>
+                                            <td>
+                                                {{$role->name}}
+
+                                            </td>
 
                                             <td>
                                                 @foreach($role -> permissions as $permission)
@@ -181,7 +184,7 @@
                                                         <form action="{{route('rolesUpdate')}}" method="post">
 
                                                             @csrf
-                                                            <input id="id" name="id" type="text"  value="{{ $role->id }}"/>
+                                                            <input id="id" name="id" type="hidden"  value="{{ $role->id }}"/>
                                                             <div class="row">
                                                                 <div class="col-6">
                                                                     <label for="Name_ar" class="mr-sm-2">{{ trans('sidebar.Name_ar') }}  :</label>

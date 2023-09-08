@@ -25,3 +25,30 @@
 
 <!-- Menu CSS-->
 <link href="{{ URL::asset('landing-page/css/menu.min.css') }}" rel="stylesheet">
+
+
+
+
+@if (App::getLocale() == 'en')
+
+
+
+
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('Theme/ltr/assets/css/style.css') }}">
+    <!-- END: Custom CSS-->
+
+
+
+@else
+
+
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('Theme/rtl/assets/css/style-rtl.css') }}">
+    <!-- END: Custom CSS-->
+
+
+@endif
+

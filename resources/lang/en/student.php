@@ -22,5 +22,5 @@ return [
     'academic_year' => 'academic_year',
     'submit' => 'submit',
     'stuname' => 'student Name',
-
+    'studentsClassrooms' => 'Students Classrooms',
 ];

@@ -3,13 +3,13 @@
 @extends('Theme.layouts.master')
 
 @section('page_header')
-    {{trans('sidebar.students')}}
+    {{trans('student.students')}}
 @stop
 @section('CustomHead')
 
 @endsection
 @section('page_title')
-    {{trans('sidebar.studentssClassrooms')}}
+    {{trans('student.studentsClassrooms')}}
 
 
 @stop
@@ -25,7 +25,7 @@
                     @for($i = 3; $i <= count(Request::segments()); $i++)
                         <li class="breadcrumb-item active">
                             <a href="{{Request::segment($i)}}">
-                              LSA SSSSS
+                                {{trans('student.studentsClassrooms')}}
                             </a>
                         </li>
                     @endfor
@@ -59,7 +59,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">{{trans('sidebar.Classes')}}</h4>
+                            <h4 class="card-title">{{trans('student.studentsClassrooms')}}</h4>
                             <a class="heading-elements-toggle">
                                 <i class="la la-ellipsis font-medium-3"></i>
                             </a>
@@ -98,7 +98,7 @@
                                             <th>{{trans('sidebar.Stage')}}</th>
                                             <th>{{trans('sidebar.Class')}}</th>
                                             <th>{{trans('sidebar.Name')}}</th>
-                                            <th>{{trans('sidebar.students')}}</th>
+                                            <th>{{trans('student.students')}}</th>
                                             <th>{{trans('sidebar.Add')}}</th>
                                         </tr>
                                         </thead>

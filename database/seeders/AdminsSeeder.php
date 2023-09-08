@@ -37,7 +37,7 @@ class AdminsSeeder extends Seeder
         $admins->gender_id= 1;
         $admins->department_id = 1;
         $admins->profileImageURL = '1.png';
-//        $admins->role_id = 'admin1@yahoo.com';
+        $admins->role_id = 1;
         $admins->save();
 
 

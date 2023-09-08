@@ -33,7 +33,7 @@ Route::group(
 
 ///////////Stage->middleware('can:stages')['middleware' => ['can:stages']],
         Route::controller(StageController::class)->group(function () {
-            Route::get('/settings/stages', 'index')->name('stagesIndex')->middleware('can:brands');
+            Route::get('/settings/stages', 'index')->name('stagesIndex')->middleware('can:stages');
             Route::post('/settings/AdStage', 'store')->name('AddStage');
             Route::post('/settings/EdStage', 'update')->name('EditStage');
             Route::post('/settings/DeStage', 'destroy')->name('DeleteStage');
@@ -134,6 +134,13 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
         Route::controller(\App\Http\Controllers\Admins\Marketing\WebsiteSettingController::class)->group(function () {
             Route::get('/WS-setting', 'index')->name('WSIndex');
             Route::post('/WS-settingED', 'update')->name('WSSettingED');
+        });
+//////////end
+
+        ///////////AcademicYearController
+        Route::controller(\App\Http\Controllers\Admins\Settings\AcademicYearController::class)->group(function () {
+            Route::get('/AcademicYearSetting', 'index')->name('AcademicYearIndex');
+            Route::post('/AcademicYearSettingAdd', 'store')->name('AddAY');
         });
 //////////end
     });

@@ -29,6 +29,18 @@ class WebsiteSettingController extends Controller
             foreach ($info as $key=> $value){
                 WebsiteSetting::where('key', $key)->update(['value' => $value]);
             }
+
+            if($request->hasFile('logo')) {
+                $logo_name = $request->file('logo')->getClientOriginalName();
+
+                $file_name= $logo_name;
+                $path='Images/ProfileImages/WebSite';
+                $request->file('logo')->move($path,$file_name);
+                WebsiteSetting::where('key', 'logo')->update(['value' => $logo_name]);
+
+            }
+
+
             toastr( $message = trans('messages.Update'),  $type = 'warning',  $title = ' ');
             return back();
         }

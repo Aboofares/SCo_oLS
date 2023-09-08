@@ -3,13 +3,13 @@
 @extends('Theme.layouts.master')
 
 @section('page_header')
-    {{trans('mainTransCustom.Courses')}}
+    {{trans('quickTrans.Courses')}}
 @stop
 @section('CustomHead')
 
 @endsection
 @section('page_title')
-    {{trans('mainTransCustom.Courses')}}
+    {{trans('quickTrans.Courses-List')}}
 
 
 @stop
@@ -22,10 +22,10 @@
                         {{trans('mainTransCustom.Dashboard')}}</a>
                 </li>
 
-                    @for($i = 4; $i <= count(Request::segments()); $i++)
+                    @for($i = 3; $i <= count(Request::segments()); $i++)
                         <li class="breadcrumb-item active">
                             <a href="{{Request::segment($i)}}">
-                                {{trans('mainTransCustom.Courses')}}
+                                {{trans('quickTrans.Courses-List')}}
                             </a>
                         </li>
                     @endfor
@@ -45,7 +45,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="basicModalLabel1">
-                        {{trans('sidebar.Courses-Add')}}
+                        {{trans('quickTrans.Courses-Add')}}
                     </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -57,17 +57,17 @@
                         @csrf
                         <div class="row">
                             <div class="col-6">
-                                <label class="mr-sm-2">{{ trans('sidebar.Name_ar') }}  :</label>
+                                <label class="mr-sm-2">{{trans('quickTrans.CName_ar')}} :</label>
                                 <input id="Name_ar" name="Name_ar" type="text"  class="form-control round">
                             </div>
                             <div class="col-6">
-                                <label class="mr-sm-2">{{ trans('sidebar.Name_en') }} :</label>
+                                <label class="mr-sm-2">{{ trans('quickTrans.CName_en') }} :</label>
                                 <input id="Name_en" name="Name_en" type="text" class="form-control round">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <label   class="mr-sm-2">{{ trans('sidebar.Specialization') }}:</label>
+                                <label   class="mr-sm-2">{{ trans('quickTrans.CSpecialization') }}:</label>
                                 <select  class="form-control round" name="Specialization_id">
                                     @foreach($specializations as $specialization)
                                         <option value="{{$specialization->id}}">{{$specialization->name}}</option>
@@ -79,7 +79,7 @@
                                 <input type="checkbox" class="form-control round" name="Status" id="Status" />
                             </div>
                             <div class="col-4">
-                                <label   class="mr-sm-2" >{{ trans('sidebar.Note') }}:</label>
+                                <label   class="mr-sm-2" >{{ trans('quickTrans.CNote') }}:</label>
                                 <textarea  class="form-control round" name="Note" id="Note"></textarea>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                         <div class="card-body">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary round" data-toggle="modal" data-target="#default">
-                                {{trans('sidebar.AddCourses')}}
+                                {{trans('quickTrans.Courses-Add')}}
                             </button>
                             <br><br>
                             <!-- end Button trigger modal -->
@@ -134,9 +134,9 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th> </th>
-                                    <th> </th>
-                                    <th> </th>
+                                    <th>{{trans('quickTrans.CName')}} </th>
+                                    <th> {{trans('quickTrans.CSpecialization')}}</th>
+                                    <th> {{trans('sidebar.Processes')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -181,18 +181,18 @@
                                                         <input id="id" name="id" type="hidden"  value="{{ $course->id }}"/>
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                <label for="Name_ar" class="mr-sm-2">{{ trans('sidebar.Name_ar') }}  :</label>
+                                                                <label for="Name_ar" class="mr-sm-2">{{trans('quickTrans.CName_ar')}} :</label>
                                                                 <input id="Name_ar" name="Name_ar" type="text" value="{{$course->getTranslation('name', 'ar')}}" class="form-control round">
                                                             </div>
                                                             <div class="col-6">
-                                                                <label for="Name_en" class="mr-sm-2">{{ trans('sidebar.Name_en') }} :</label>
+                                                                <label for="Name_en" class="mr-sm-2">{{trans('quickTrans.CName_en')}} :</label>
                                                                 <input id="Name_en" name="Name_en" type="text" value="{{$course->getTranslation('name', 'en')}}" class="form-control round">
                                                             </div>
                                                         </div>
                                                         <div class="row">
 
                                                             <div class="col-6">
-                                                                <label   class="mr-sm-2">{{ trans('sidebar.Specialization') }}:</label>
+                                                                <label   class="mr-sm-2">{{ trans('quickTrans.CSpecialization') }}:</label>
                                                                 <select  class="form-control round" name="Specialization_id">
                                                                     <option value="{{$course->Specialization->id}}">{{$course->Specialization->name}}</option>
                                                                     @foreach($specializations as $specialization)

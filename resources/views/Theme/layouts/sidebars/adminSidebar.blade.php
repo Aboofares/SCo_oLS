@@ -29,7 +29,8 @@
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('rolesIndex')}}">{{trans('mainTransCustom.Roles-List')}}</a>
                             </li>
-                            <li><a class="menu-item" href="{{route('WSIndex')}}">WSIndex</a>
+
+                            <li><a class="menu-item" href="{{route('AcademicYearIndex')}}">{{trans('quickTrans.AcademicYearT-list')}}</a>
                             </li>
 
                         </ul>
@@ -48,7 +49,7 @@
                             </li>
 
                             <li>
-                                <a class="menu-item" href="{{route('coursesIndex')}}"> coursesIndex</a>
+                                <a class="menu-item" href="{{route('coursesIndex')}}"> {{trans('quickTrans.Courses')}}</a>
                             </li>
 
                         </ul>
@@ -89,7 +90,7 @@
                     <ul class="menu-content">
                         <li><a class="menu-item" href="{{route('students')}}">{{trans('sidebar.Students-list')}} </a>
                         </li>
-                        <li><a class="menu-item" href="{{route('StudentsClassroom')}}">{{trans('sidebar.StudentsClassrooms')}} </a>
+                        <li><a class="menu-item" href="{{route('StudentsClassroom')}}">{{trans('student.studentsClassrooms')}} </a>
                         </li>
                     </ul>
                 </li>
@@ -101,6 +102,33 @@
         </li>
 {{--end tab--}}
 
+
+
+
+
+            {{--Layouts tab--}}
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="ft-layout"></i>
+                    <span class="menu-title" data-i18n="">{{trans('mainTransCustom.Marketing')}}</span>
+                    <span class="badge badge badge-pill badge-danger float-right mr-2"> </span>
+                </a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="#">{{trans('mainTransCustom.Website')}}</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('WSIndex')}}"> {{trans('mainTransCustom.Website-MainData')}}</a>
+                            </li>
+                            <li><a class="menu-item" href="#">--</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navigation-divider"></li>
+                    <li><a class="menu-item" href="">--</a>
+                    </li>
+                </ul>
+
+            </li>
+            {{--Layouts tab--}}
 
 
 

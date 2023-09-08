@@ -15,17 +15,31 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //php artisan db:seed --class=RoleSeeder
+
 
         DB::table('roles')->delete();
         $specializations = [
-            ['en'=> 'deputy', 'ar'=> 'وكيل'],
-            ['en'=> 'supervisor', 'ar'=> 'رئيس قسم'],
-            ['en'=> 'senior', 'ar'=> 'خبرة'],
-            ['en'=> 'junior', 'ar'=> 'مبتدأ'],
+            ['en'=> 'all2', 'ar'=> '2الكل'],
         ];
-        foreach ($specializations as $S) {
-            Role::create(['name' => $S]);
+
+        $pp= array();
+        foreach (config('customeperm.permissions') as $name => $value){
+            $ty=$name;
+            array_push($pp,$ty);
         }
+//        dd($pp);
+        foreach ($specializations as $S) {
+            Role::create(['name' => $S,
+                'Role_Description' =>  "all",
+                'permissions'=>json_encode($pp),
+            ]);
+        }
+
+
+
+
+
+
     }
 }

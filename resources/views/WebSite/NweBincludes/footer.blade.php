@@ -3,7 +3,9 @@
 
     <!-- Foooter Text-->
     <div class="copyright-text">
-        <p>Copyright ©2023 Designed by <a href="#" target="_blank">M</a></p>
+        <p>{{trans('sidebar.Copyright')}} ©{{ now()->year }}
+            {{trans('sidebar.DesignedBy')}}  <a href="#" target="_blank">{{trans('sidebar.Developer_Name')}}</a>
+        </p>
     </div>
 </footer>
 <!-- END: Footer-->
