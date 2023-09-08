@@ -17,6 +17,9 @@ class RoleController extends Controller
     {
         //
         $roles = Role::all(); // use pagination and  add custom pagination on index.blade
+
+
+
         return view('Admins.Content.Settings.Main.RolesIndex', compact('roles'));
     }
 
@@ -40,7 +43,14 @@ class RoleController extends Controller
     {
         //
         try {
+//            $role = $this->process(new Role, $request);
+
             $role = $this->process(new Role, $request);
+//            $Classrooms->teachers()->attach($request->teacher_id,
+//                [
+//                    'notes' => $request->currentyear,
+//                    'status' => true,
+//                ]);
             toastr( $message = trans('messages.success'),  $type = 'success',  $title = ' ');
             return redirect()->route('rolesIndex');
         }

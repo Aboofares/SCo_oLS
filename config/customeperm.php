@@ -12,11 +12,24 @@ return [
 //    ]
 
     'permissions' => [
-        'products' => 'التحكم بالاعدادات العامة',
-        'tags' => 'التحكم بالعلامات',
-        'categories' => 'التحكم بالاقسام',
-        'brands' => 'التحكم بالماركات',
-        'options' => 'التحكم بخصائص المنتج',
-        'users' => 'التحكم  بمستخدمي اللوحه',
+//        'products' => 'التحكم بالاعدادات العامة',
+//        'tags' => 'التحكم بالعلامات',
+//        'categories' => 'التحكم بالاقسام',
+//        'brands' => 'التحكم بالماركات',
+//        'options' => 'التحكم بخصائص المنتج',
+//        'users' => 'التحكم  بمستخدمي اللوحه',
+
+        'stages' =>'stages-View',
+        'students' => 'students-View',
+        'grades' => 'grades-View',
+        'classrooms' => 'classrooms-View',
+        'profile' => 'profile-View',
+        'teachers' => 'teachers-View',
+        'roles' => 'roles-View',
+        'website' => 'website-View',
+        'academicYears' =>'academicYears-View',
+
+
+
     ]
 ];

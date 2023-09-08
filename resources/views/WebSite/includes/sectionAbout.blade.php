@@ -10,7 +10,6 @@
 
                 <p>You can feel free to use this CSS template for your medical profession or health care related websites. You can <a rel="nofollow" href="http://paypal.me/templatemo" target="_blank">support us a little</a> via PayPal if this template is good and useful for your work.</p>
             </div>
-
             <div class="col-lg-4 col-md-5 col-12 mx-auto">
                 <div class="featured-circle bg-white shadow-lg d-flex justify-content-center align-items-center">
                     <p class="featured-text"><span class="featured-number">12</span> Years<br> of Experiences</p>

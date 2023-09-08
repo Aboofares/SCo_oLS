@@ -18,10 +18,11 @@
                                 <li class="nav-item active"><a data-hover="Home" class="nav-link" href="#home">Home</a></li>
                                 <li class="nav-item"><a data-hover="Demos" class="nav-link" href="#demos">About</a></li>
                                 <li class="nav-item"><a data-hover="Applications" class="nav-link" href="#counters">counters</a></li>
-                                <li class="nav-item"><a data-hover="Pages" class="nav-link" href="#components">components</a></li>
-                                <li class="nav-item"><a data-hover="Layouts" class="nav-link" href="#layouts">Layouts</a></li>
-                                <li class="nav-item"><a data-hover="Cards" class="nav-link" href="#cards">Cards</a></li>
-                                <li class="nav-item"><a data-hover="FAQ" class="nav-link" href="#purchase">Purchase</a></li>
+                                <li class="nav-item"><a data-hover="Pages" class="nav-link" href="#components">School Features</a></li>
+                                <li class="nav-item"><a data-hover="Layouts" class="nav-link" href="#layouts">ContactUs</a></li>
+                                <li class="nav-item"><a data-hover="Login" class="nav-link" href="{{route('selection')}}">login</a></li>
+{{--                                <li class="nav-item"><a data-hover="Cards" class="nav-link" href="#cards">Cards</a></li>--}}
+{{--                                <li class="nav-item"><a data-hover="FAQ" class="nav-link" href="#purchase">Purchase</a></li>--}}
                             </ul>
                         </div>
                     </nav>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Website\WebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -46,13 +47,20 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function(){
 
-    Route::get('/', function () {
-        return view('WebSite.Hwebsite');
+//    Route::get('/', function () {
+//        return view('WebSite.Hwebsite');
+//    });
+
+//    Route::get('/nw', function () {
+//        return view('WebSite.Index');
+//    });
+
+    Route::controller(WebsiteController::class)->group(function () {
+        Route::get('/', 'index')->name('Web');
     });
 
-    Route::get('/nw', function () {
-        return view('WebSite.Index');
-    });
+
+
 
     Route::get('/selection', [App\Http\Controllers\HomeController::class, 'index'])->name('selection');
 
@@ -61,5 +69,11 @@ Route::group(
         Route::post('/login', 'login')->name('login');
         Route::get('/logout/{type}', 'logout')->name('logout');
     });
+
+
+
+
+
+
 });
 //////////////

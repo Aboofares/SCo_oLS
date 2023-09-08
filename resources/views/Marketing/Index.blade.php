@@ -9,7 +9,7 @@
 
 @endsection
 @section('page_title')
-    {{trans('mainTransCustom.Website')}}
+    {{trans('mainTransCustom.Website-MainData')}}
 
 
 @stop
@@ -22,10 +22,10 @@
                         {{trans('mainTransCustom.Dashboard')}}</a>
                 </li>
 
-                    @for($i = 4; $i <= count(Request::segments()); $i++)
+                    @for($i = 3; $i <= count(Request::segments()); $i++)
                         <li class="breadcrumb-item active">
                             <a href="{{Request::segment($i)}}">
-                                {{trans('mainTransCustom.Website')}}
+                                {{trans('mainTransCustom.Website-MainData')}}
                             </a>
                         </li>
                     @endfor
@@ -64,52 +64,64 @@
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="mr-sm-2">{{ trans('sidebar.Name_ar') }}  :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.WebName_ar') }}  :</label>
                                         <input  name="school_nameAr" type="text" value="{{ $setting['school_nameAr'] }}" class="form-control round">
                                     </div>
                                     <div class="col-6">
-                                        <label class="mr-sm-2">{{ trans('sidebar.Name_en') }} :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.WebName_en') }} :</label>
                                         <input name="school_nameEn" type="text" value="{{ $setting['school_nameEn'] }}" class="form-control round">
                                     </div>
                                 </div>
+                                <br>
                                 <div class="row">
                                     <div class="col-6">
-                                        <label class="mr-sm-2">{{ trans('sidebar.school_phone') }}  :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.school_phone') }}  :</label>
                                         <input  name="school_phone" type="text" value="{{ $setting['school_phone'] }}" class="form-control round">
                                     </div>
                                     <div class="col-6">
-                                        <label class="mr-sm-2">{{ trans('sidebar.school_phone2') }} :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.school_phone2') }} :</label>
                                         <input name="school_phone2" type="text" value="{{ $setting['school_phone2'] }}" class="form-control round">
                                     </div>
                                 </div>
+                                <br>
                                 <div class="row">
                                     <div class="col-12">
-                                        <label class="mr-sm-2">{{ trans('sidebar.school_Address') }}  :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.school_Address') }}  :</label>
                                        <textarea name="school_Address" class="form-control round" rows="2">{{$setting['school_Address']}}</textarea>
                                     </div>
 
                                 </div>
+                                <br>
                                 <div class="row">
                                     <div class="col-4">
-                                        <label class="mr-sm-2">{{ trans('sidebar.school_email') }}  :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.school_email') }}  :</label>
                                         <input  name="school_email" type="text" value="{{ $setting['school_email'] }}" class="form-control round">
                                     </div>
                                     <div class="col-4">
-                                        <label class="mr-sm-2">{{ trans('sidebar.school_fb') }} :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.school_fb') }} :</label>
                                         <input name="school_fb" type="text" value="{{ $setting['school_fb'] }}" class="form-control round">
                                     </div>
                                     <div class="col-4">
-                                        <label class="mr-sm-2">{{ trans('sidebar.school_ins') }} :</label>
+                                        <label class="mr-sm-2">{{ trans('mainTransCustom.school_ins') }} :</label>
                                         <input name="school_ins" type="text" value="{{ $setting['school_ins'] }}" class="form-control round">
                                     </div>
                                 </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>{{ trans('mainTransCustom.mainImage') }}:</label><br>
+                                        <img style="width: 200px" height="200px" src="{{ URL::asset('Images/ProfileImages/WebSite/'.$setting['logo']) }}">
+                                    </div>
+                                    <div class="col-8">
+                                        <input name="logo" accept="image/*" type="file" class="file-input" data-show-caption="false" data-show-upload="false">
+                                    </div>
 
-
-
+                                </div>
+                                <br>
                                 <hr>
 
                                 <button class="btn btn-primary btn-sm nextBtn btn-lg pull-right" type="submit">{{trans('Students_trans.submit')}}</button>
-
+                                <br>
                             </form>
                         </div>
                     </div>

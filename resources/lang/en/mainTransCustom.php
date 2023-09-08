@@ -51,5 +51,18 @@ return [
     'RestPassword'=>'Rest Password',
     'Roles'=>'Roles',
     'Roles-List'=>'Roles-List',
+    'Website'=>'Website',
+    'Website-MainData'=>'Website-MainData',
+    'WebName_ar' => 'School_Name_ar',
+    'WebName_en' => 'School_Name_en',
+
+    'school_phone' => 'phone',
+    'school_phone2' => 'phone 2',
+    'school_Address' => 'School address',
+    'school_email' => 'School Email',
+    'school_fb' => 'School Facebook',
+    'school_ins' => 'School Instagram',
+    'mainImage' => 'Main Image',
+    'Marketing' => 'Marketing',
 ];
 

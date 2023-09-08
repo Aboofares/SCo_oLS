@@ -23,5 +23,7 @@ return [
     'academic_year' => 'السنة الدراسية',
     'submit' => 'حفظ البيانات',
 
+    'studentsClassrooms' => 'فصول الطلاب',
+
 
 ];

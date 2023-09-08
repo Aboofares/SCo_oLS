@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'AcademicYear' => 'العام الدراسي',
+    'FirstTermStartDate' => 'تاريخ  بدأ الترم الأول',
+    'FirstTermEndDate' => 'تاريخ  نهاية الترم الأول',
+    'MiddleExamsStartDate' => 'تاريخ  بدأ امتحانات نصف العام',
+    'MiddleExamsEndDate' => 'تاريخ  نهايةامتحانات نصف العام',
+    'SecondTermStartDate' => 'تاريخ  بدأ الترم الثاني',
+    'SecondTermEndDate' => 'تاريخ  نهاية الترم الثاني',
+    'FinalExamsStartDate' => 'تاريخ  بدأ امتحانات نهاية العام',
+    'FinalExamsEndDate' => 'تاريخ  نهاية امتحانات نهاية العام',
+    'SummerStartDate' => ' بدأ عطلة نهاية العام',
+    'SummerEndDate' => 'نهاية عطلة نهاية العام ',
+    'AdmissionStartDate' => 'تاريخ  بدأ التقديمات',
+    'AdmissionEndDate' => 'نهاية  بدأ التقديمات',
+    'AcademicYearStatus' => 'الحاله',
+    'AcademicYearNote' => 'ملاحظات',
+
+    'AcademicYearT' => 'العام الدراسي',
+    'AcademicYearT-list' => 'قائمة العام الدراسي',
+    'AcademicYearAdd' => 'أضافة عام دراسي',
+    'Courses' => 'المواد الدراسية',
+    'Courses-List' => 'قائمة المواد الدراسية',
+    'CNote' => 'ملاحظات',
+    'CSpecialization' => 'التخصص',
+    'CName_ar' => 'الأسم بالعربية',
+    'CName_en' => 'الأسم بالإنجليزية',
+    'Courses-Add' => 'أضافة ماده',
+    'CName' => 'أسم الماده',
+];
