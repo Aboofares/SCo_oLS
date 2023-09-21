@@ -66,6 +66,8 @@ return [
     'Marketing' => 'التسويق',
 
 
+    'Admission'=>'التقديمات',
+    'Admission-List'=>'قائمه التقديمات',
 
 
 ];

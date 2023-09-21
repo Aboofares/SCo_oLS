@@ -34,7 +34,26 @@
     <!-- section start-->
     <section>
 
+        <div class="row">
+            <div class="col-xl-3 col-lg-6 col-12">
+                <div class="card bg-gradient-x-purple-blue">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-top">
+                                    <i class="icon-eye icon-opacity text-white font-large-4 float-left"></i>
+                                </div>
+                                <div class="media-body text-white text-right align-self-bottom mt-3">
+                                    <span class="d-block mb-1 font-medium-1">My Classes</span>
+                                    <h1 class="text-white mb-0">{{\App\Models\Admins\Settings\TeacherClassroom::where('teacher_id',Auth::user()->id)->count()}}</h1>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
     <!-- section end  -->

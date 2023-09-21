@@ -143,6 +143,13 @@ Route::get('/Teachers', 'index')->name('TeachersIndex');
             Route::post('/AcademicYearSettingAdd', 'store')->name('AddAY');
         });
 //////////end
+
+        ///////////AdmissionController
+        Route::controller(\App\Http\Controllers\Admission\AdmissionController::class)->group(function () {
+            Route::get('/StudentAdmission', 'index')->name('StudentAdmissionIndex');
+
+        });
+//////////end
     });
 
 

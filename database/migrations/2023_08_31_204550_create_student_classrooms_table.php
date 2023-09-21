@@ -22,9 +22,12 @@ class CreateStudentClassroomsTable extends Migration
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
 
-            $table->string('AcademicYear')->nullable();
+//            $table->string('AcademicYear')->nullable();
 
-            $table->timestamps();
+            $table->bigInteger('Cm_AcademicYear_id')->unsigned();
+            $table->foreign('Cm_AcademicYear_id')->references('id')->on('academic_years')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

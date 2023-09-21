@@ -64,5 +64,8 @@ return [
     'school_ins' => 'School Instagram',
     'mainImage' => 'Main Image',
     'Marketing' => 'Marketing',
+
+    'Admission'=>'Admission',
+    'Admission-List'=>'Admission List',
 ];
 

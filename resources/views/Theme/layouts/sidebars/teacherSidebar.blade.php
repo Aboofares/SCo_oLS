@@ -2,7 +2,7 @@
 
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row position-relative">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{ url('teacher/dashboard') }}">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{ route('TeacherDashboard') }}">
                     <img class="brand-logo" alt="logo" src="{{ URL::asset('Theme/ltr/app-assets/images/logo/logo.png') }}" />
                     <h3 class="brand-text">{{trans('sidebar.App-Name')}} </h3>
                 </a></li>

@@ -59,7 +59,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">{{trans('student.studentsClassrooms')}}</h4>
+
                             <a class="heading-elements-toggle">
                                 <i class="la la-ellipsis font-medium-3"></i>
                             </a>
@@ -169,8 +169,7 @@
                                                                     <label>{{ trans('sidebar.CurrentYear') }}</label>
                                                                     <select name="currentyear" class="form-control">
 
-                                                                        <option value="2013">2013</option>
-                                                                        <option value="2014">2014</option>
+                                                                        <option value="{{$AcademicYear->id}}">{{$AcademicYear->AcademicYear}}</option>
 
                                                                     </select>
                                                                 </div>

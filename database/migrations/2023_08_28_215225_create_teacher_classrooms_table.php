@@ -22,10 +22,16 @@ class CreateTeacherClassroomsTable extends Migration
             $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
 
-            $table->string('Cm_AcademicYear')->nullable();
+
+            $table->bigInteger('Cm_AcademicYear_id')->unsigned();
+            $table->foreign('Cm_AcademicYear_id')->references('id')->on('academic_years')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+//            $table->string('Cm_AcademicYear')->nullable();
             $table->boolean('status')->nullable();
             $table->text('notes')->nullable();
-            $table->timestamps();
+
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admins\Settings;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admins\Settings\AcademicYear;
 use App\Models\Admins\Settings\Classroom;
 use App\Models\Students\Student;
 use Illuminate\Http\Request;
@@ -19,8 +20,8 @@ class StudentClassroomController extends Controller
         //
         $Classrooms=Classroom::all();
         $Students=Student::all();
-
-        return view('Admins.content.Students.Classroom.studentsClassroomsIndex',compact('Students','Classrooms'));
+        $AcademicYear=AcademicYear::where('AcademicYearStatus', true)->first();
+        return view('Admins.content.Students.Classroom.studentsClassroomsIndex',compact('Students','Classrooms','AcademicYear'));
     }
 
     /**
@@ -45,7 +46,7 @@ class StudentClassroomController extends Controller
         $Classrooms=Classroom::findOrFail($request->id);
         $Classrooms->students()->attach($request->student_id,
             [
-                'AcademicYear' => $request->currentyear,
+                'Cm_AcademicYear_id' => $request->currentyear,
             ]);
 
 

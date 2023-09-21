@@ -16,11 +16,15 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath','auth:teacher']
     ], function(){
 
-    Route::get('teacher/dashboard', function () {
-        return view('Teachers.dashboard');
+
+//    Route::get('teacher/dashboard', function () {
+//        return view('Teachers.dashboard');
+//    });
+
+    Route::controller(\App\Http\Controllers\Teachers\TeacherController::class)->group(function () {
+        Route::get('teacher/dashboard', 'index')->name('TeacherDashboard');
+
     });
-
-
 
 
 
@@ -36,6 +40,8 @@ Route::group(
         Route::post('/ProfilePassword', 'ProfilePassword')->name('TProfilePassword');
         });
         //////////end
+
+
 
     });
 

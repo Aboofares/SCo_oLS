@@ -18,7 +18,7 @@
         <div class="breadcrumb-wrapper mr-1">
             <ol class="breadcrumb">
 
-                <li class="breadcrumb-item"><a href="#">
+                <li class="breadcrumb-item"><a href="{{route('TeacherDashboard')}}">
                         {{trans('mainTransCustom.Dashboard')}}</a>
                 </li>
 

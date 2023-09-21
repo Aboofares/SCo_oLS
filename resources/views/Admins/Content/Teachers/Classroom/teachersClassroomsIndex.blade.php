@@ -25,7 +25,7 @@
                     @for($i = 3; $i <= count(Request::segments()); $i++)
                         <li class="breadcrumb-item active">
                             <a href="{{Request::segment($i)}}">
-                              LSA
+                                {{trans('sidebar.teachersClassrooms')}}
                             </a>
                         </li>
                     @endfor
@@ -59,7 +59,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">{{trans('sidebar.Classes')}}</h4>
+
                             <a class="heading-elements-toggle">
                                 <i class="la la-ellipsis font-medium-3"></i>
                             </a>
@@ -158,11 +158,7 @@
                                                                        value="{{ $Classroom->id }}"/>
                                                                 <div class="form-group">
                                                                     <p class="text-bold-600 font-medium-2">{{ trans('sidebar.teachers') }}</p>
-                                                                    <select name="teacher_id[]" class="form-control"
-                                                                            multiple="">
-                                                                        {{--                                                                        @foreach($Classroom->teachers as $teacherClassRoom)--}}
-                                                                        {{--                                                                            <option selected value="{{$teacherClassRoom['id']}}">{{$teacherClassRoom['name']}}</option>--}}
-                                                                        {{--                                                                        @endforeach--}}
+                                                                    <select name="teacher_id[]" class="form-control" multiple="">
                                                                         @foreach($teachers as $teacher)
                                                                             <option value="{{$teacher->id}}">{{$teacher->name}}</option>
                                                                         @endforeach
@@ -171,10 +167,7 @@
                                                                 <div class="form-group">
                                                                     <label>{{ trans('sidebar.CurrentYear') }}</label>
                                                                     <select name="currentyear" class="form-control">
-
-                                                                        <option value="2013">2013</option>
-                                                                        <option value="2014">2014</option>
-
+                                                                        <option value="{{$AcademicYear->id}}">{{$AcademicYear->AcademicYear}}</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
@@ -183,6 +176,11 @@
                                                                            class="form-control" checked>
                                                                 </div>
 
+                                                                <div class="form-group">
+                                                                    <label>{{ trans('sidebar.Notes') }}</label>
+                                                                    <input name="Notes" type="text"
+                                                                           class="form-control">
+                                                                </div>
 
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn grey btn-secondary"
